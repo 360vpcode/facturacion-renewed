@@ -352,22 +352,22 @@ class ImportarProveedoresController extends Controller
     }
     public function updateFacturacion(Request $request): \Illuminate\Http\JsonResponse
     {
-        // Validación de los campos que llegan desde el formulario
-        $validatedData = $request->validate([
-            'regimen_fiscal' => 'required|integer',
-            'rfc' => 'required|string|max:13',
-            'razon_social' => 'required|string|max:255',
-            'correo' => 'required|email|max:255',
-            'vialidad' => 'required|string|max:255',
-            'numero_interior' => 'nullable|string|max:10',
-            'numero_exterior' => 'required|string|max:10',
-            'codigo_postal' => 'required|string|max:5',
-            'colonia' => 'required|string|max:255',
-            'alcaldia_municipio' => 'required|string|max:255',
-            'entidad' => 'required|string|max:255',
-        ]);
-
         try {
+            // Validación de los campos que llegan desde el formulario
+            $validatedData = $request->validate([
+                'regimen_fiscal_id' => 'required|integer',
+                'rfc' => 'required|string|max:13',
+                'razon_social' => 'required|string|max:255',
+                'correo' => 'required|email|max:255',
+                'nombre_vialidad' => 'required|string|max:255',
+                'numero_interior' => 'nullable|string|max:10',
+                'numero_exterior' => 'required|string|max:10',
+                'codigo_postal' => 'required|string|max:5',
+                'colonia' => 'required|string|max:255',
+                'alcaldia_municipio' => 'required|string|max:255',
+                'entidad' => 'required|string|max:255',
+            ]);
+
             $facturacion = Facturacion::where('rfc', $request->rfc)->first();
 
             if ($facturacion) {
@@ -377,10 +377,14 @@ class ImportarProveedoresController extends Controller
             } else {
                 return response()->json(['success' => false, 'message' => 'No se encontró el registro de facturación.'], 404);
             }
+        } catch (ValidationException $e) {
+            // Devolver errores de validación
+            return response()->json(['success' => false, 'errors' => $e->errors()], 422);
         } catch (\Exception $e) {
-            // Manejar el error y devolver una respuesta de error
+            // Manejar otros errores y devolver una respuesta de error
             return response()->json(['success' => false, 'message' => 'Error al actualizar los datos.'], 500);
         }
     }
+
 
 }

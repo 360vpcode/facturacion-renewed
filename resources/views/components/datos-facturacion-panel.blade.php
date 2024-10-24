@@ -369,22 +369,23 @@
             if ($(this).text() === 'Guardar y continuar') {
                 let csrfToken = $('meta[name="csrf-token"]').attr('content');
                 let formData = {
-                    regimen_fiscal: $('#regimen_fiscal').val(),
+                    regimen_fiscal_id: $('#regimen_fiscal').val(),
                     rfc: $('#rfc').val(),
                     razon_social: $('#razon_social').val(),
                     correo: $('#correo').val(),
-                    vialidad: $('#vialidad').val(),
+                    nombre_vialidad: $('#vialidad').val(),
                     numero_interior: $('#numero_interior').val(),
                     numero_exterior: $('#numero_exterior').val(),
                     codigo_postal: $('#codigo_postal').val(),
                     colonia: $('#colonia').val(),
                     alcaldia_municipio: $('#alcaldia_municipio').val(),
                     entidad: $('#entidad').val(),
+                    _method: 'PUT' // Importante para que Laravel reconozca el metodo
                 };
 
                 $.ajax({
-                    url: '/update/facturacion',  // La ruta para actualizar los datos
-                    method: 'PUT',
+                    url: '/update/facturacion',
+                    type: 'PUT', // Usamos POST y especificamos el metodo PUT en los datos
                     headers: {
                         'X-CSRF-TOKEN': csrfToken
                     },
@@ -392,19 +393,31 @@
                     success: function (response) {
                         if (response.success) {
                             alert('Datos actualizados correctamente.');
+                            // Restablecer el texto del botón
+                            $('#siguiente').text('Siguiente');
                         } else {
-                            alert('Ocurrió un error al actualizar los datos.');
+                            alert(response.message || 'Ocurrió un error al actualizar los datos.');
                         }
                     },
                     error: function (xhr) {
-                        console.log(xhr.responseJSON); // Muestra el error exacto en la consola
-                        alert('Error en la solicitud. Revisa la consola para más detalles.');
+                        if (xhr.status === 422) {
+                            // Errores de validación
+                            let errors = xhr.responseJSON.errors;
+                            let errorMessages = '';
+                            for (let field in errors) {
+                                errorMessages += errors[field].join('\n') + '\n';
+                            }
+                            alert('Errores de validación:\n' + errorMessages);
+                        } else {
+                            console.log(xhr.responseJSON);
+                            alert('Error en la solicitud. Revisa la consola para más detalles.');
+                        }
                     }
                 });
-
             }
         });
     });
+
 
 </script>
 
