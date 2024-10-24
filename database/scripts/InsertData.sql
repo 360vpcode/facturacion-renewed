@@ -419,26 +419,28 @@ GO
 SET IDENTITY_INSERT facturacion.dbo.cat_regimen_fiscal ON;
 GO
 
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion)VALUES (601, N'601', N'General de Ley Personas Morales');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (603, N'603', N'Personas Morales con Fines no Lucrativos');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (605, N'605', N'Sueldos y Salarios e Ingresos Asimilados a Salarios');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (606, N'606', N'Arrendamiento');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (607, N'607', N'Régimen de Enajenación o Adquisición de Bienes');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (608, N'608', N'Demás ingresos');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (610, N'610', N'Residentes en el Extranjero sin Establecimiento Permanente en México');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (611, N'611', N'Ingresos por Dividendos (socios y accionistas)');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (612, N'612', N'Personas Físicas con Actividades Empresariales y Profesionales');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (614, N'614', N'Ingresos por intereses');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (615, N'615', N'Régimen de los ingresos por obtención de premios');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (616, N'616', N'Sin obligaciones fiscales');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (620, N'620', N'Sociedades Cooperativas de Producción que optan por diferir sus ingresos');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (621, N'621', N'Incorporación Fiscal');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (622, N'622', N'Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (623, N'623', N'Opcional para Grupos de Sociedades');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (624, N'624', N'Coordinados');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (625, N'625', N'Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas');
-INSERT INTO facturacion.dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion) VALUES (626, N'626', N'Régimen Simplificado de Confianza');
-GO
+SET IDENTITY_INSERT dbo.cat_regimen_fiscal ON;
+insert into dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion)
+values  (601, N'601', N'General de Ley Personas Morales'),
+        (603, N'603', N'Personas Morales con Fines no Lucrativos'),
+        (605, N'605', N'Sueldos y Salarios e Ingresos Asimilados a Salarios'),
+        (606, N'606', N'Arrendamiento'),
+        (607, N'607', N'Régimen de Enajenación o Adquisición de Bienes'),
+        (608, N'608', N'Demás ingresos'),
+        (610, N'610', N'Residentes en el Extranjero sin Establecimiento Permanente en México'),
+        (611, N'611', N'Ingresos por Dividendos (socios y accionistas)'),
+        (612, N'612', N'Personas Físicas con Actividades Empresariales y Profesionales'),
+        (614, N'614', N'Ingresos por intereses'),
+        (615, N'615', N'Régimen de los ingresos por obtención de premios'),
+        (616, N'616', N'Sin obligaciones fiscales'),
+        (620, N'620', N'Sociedades Cooperativas de Producción que optan por diferir sus ingresos'),
+        (621, N'621', N'Incorporación Fiscal'),
+        (622, N'622', N'Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras'),
+        (623, N'623', N'Opcional para Grupos de Sociedades'),
+        (624, N'624', N'Coordinados'),
+        (625, N'625', N'Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas'),
+        (626, N'626', N'Régimen Simplificado de Confianza');
+SET IDENTITY_INSERT dbo.cat_regimen_fiscal OFF;
 
 SET IDENTITY_INSERT facturacion.dbo.cat_regimen_fiscal OFF;
 GO
