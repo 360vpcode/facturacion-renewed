@@ -361,7 +361,7 @@ class ImportarProveedoresController extends Controller
             'vialidad' => 'required|string|max:255',
             'numero_interior' => 'nullable|string|max:10',
             'numero_exterior' => 'required|string|max:10',
-            'codigo_postal' => 'required|integer|min:5',
+            'codigo_postal' => 'required|string|max:5',
             'colonia' => 'required|string|max:255',
             'alcaldia_municipio' => 'required|string|max:255',
             'entidad' => 'required|string|max:255',

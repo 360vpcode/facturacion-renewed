@@ -367,7 +367,6 @@
         // Evento para manejar el clic en el botón 'Siguiente'
         $('#siguiente').on('click', function () {
             if ($(this).text() === 'Guardar y continuar') {
-                // Realizar la petición PUT solo si el texto es 'Guardar y continuar'
                 let csrfToken = $('meta[name="csrf-token"]').attr('content');
                 let formData = {
                     regimen_fiscal: $('#regimen_fiscal').val(),
@@ -393,15 +392,16 @@
                     success: function (response) {
                         if (response.success) {
                             alert('Datos actualizados correctamente.');
-                            // Aquí puedes hacer lo que necesites después de guardar
                         } else {
                             alert('Ocurrió un error al actualizar los datos.');
                         }
                     },
-                    error: function () {
-                        alert('Error en la solicitud. Intente de nuevo más tarde.');
+                    error: function (xhr) {
+                        console.log(xhr.responseJSON); // Muestra el error exacto en la consola
+                        alert('Error en la solicitud. Revisa la consola para más detalles.');
                     }
                 });
+
             }
         });
     });
