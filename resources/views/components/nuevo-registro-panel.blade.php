@@ -29,7 +29,7 @@
                         <select class="form-control" id="divisa" name="divisa">
                             <option class=" text-xs" value="0" selected>Selecciona una opción</option>
                             <option class=" text-xs" value="MXN">MXN</option>
-                            <option class=" text-xs" value="DLS">DLS</option>
+                            <option class=" text-xs" value="DLS">USD</option>
                         </select>
                     </div>
                 </div>
