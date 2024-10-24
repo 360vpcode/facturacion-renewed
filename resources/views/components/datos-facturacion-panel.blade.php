@@ -407,17 +407,18 @@
                             for (let field in errors) {
                                 errorMessages += errors[field].join('\n') + '\n';
                             }
-                            alert('Errores de validación:\n' + errorMessages);
+                            console.log('Errores de validación:\n' + errorMessages);
                         } else {
                             console.log(xhr.responseJSON);
-                            alert('Error en la solicitud. Revisa la consola para más detalles.');
+                            console.log('Error en la solicitud. Revisa la consola para más detalles.');
                         }
                     }
                 });
             }
         });
-    });
 
+
+    });
 
 </script>
 

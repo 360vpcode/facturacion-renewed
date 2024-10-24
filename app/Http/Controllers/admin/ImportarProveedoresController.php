@@ -369,7 +369,8 @@ class ImportarProveedoresController extends Controller
             ]);
 
             $facturacion = Facturacion::where('rfc', $request->rfc)->first();
-
+            $RegimenDescripcion= CatRegimenFiscal::where('id', $request->regimen_fiscal_id)->first();
+            $validatedData['regimen_fiscal_desc'] = $RegimenDescripcion->Descripcion;
             if ($facturacion) {
                 // Actualizamos los datos de facturación con lo que llega del request
                 $facturacion->update($validatedData);

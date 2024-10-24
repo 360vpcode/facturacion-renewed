@@ -416,8 +416,7 @@ VALUES (N'Quis impedit nulla', 2, N'2015-04-24', N'Quos exercitation ad', N'Anua
 
 GO
 
-SET IDENTITY_INSERT facturacion.dbo.cat_regimen_fiscal ON;
-GO
+
 
 SET IDENTITY_INSERT dbo.cat_regimen_fiscal ON;
 insert into dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion)
@@ -441,6 +440,6 @@ values  (601, N'601', N'General de Ley Personas Morales'),
         (625, N'625', N'Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas'),
         (626, N'626', N'Régimen Simplificado de Confianza');
 SET IDENTITY_INSERT dbo.cat_regimen_fiscal OFF;
-
-SET IDENTITY_INSERT facturacion.dbo.cat_regimen_fiscal OFF;
 GO
+
+

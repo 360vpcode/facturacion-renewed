@@ -11,6 +11,7 @@ class Facturacion extends Model
 
     protected $fillable = [
         'regimen_fiscal_id',
+        'regimen_fiscal_desc',
         'rfc',
         'razon_social',
         'correo',
