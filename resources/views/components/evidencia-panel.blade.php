@@ -43,7 +43,7 @@
                 customClass: {
                     title: 'text-lg',
                     icon: 'text-sm'
-                }                
+                }
             }).then(function () {
                 //location.reload();
             });

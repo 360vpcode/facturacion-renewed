@@ -24,25 +24,6 @@
         .hide_div {
             display: none;
         }
-
-        .swal2-styled.swal2-confirm {
-            border-color: rgba(58, 65, 111, 0.95) !important;
-            background-color: rgba(58, 65, 111, 0.95) !important;
-            background-image: none !important;
-        }      
-        
-        .swal2-styled.swal2-confirm:hover, .swal2-styled.swal2-confirm:focus {
-            background: rgba(58, 65, 111, 0.95) !important;
-        }        
-
-        .swal2-icon .swal2-icon-content {
-            font-size: 1.75em !important;
-        }        
-
-        .swal2-icon {
-            width: 3em !important;
-            height: 3em !important;
-        }        
     </style>
     @yield('head')
 </head>
