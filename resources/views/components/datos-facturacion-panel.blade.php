@@ -119,7 +119,7 @@
                     if(result["Colonia"] !== "") {
                         $('select[name="colonia"]').val(result["Colonia"]);
                     }
-                    }, 1000);
+                    }, 500);
                 }
             }
 
@@ -173,7 +173,6 @@
 
                             // Añadir las colonias al select
                             if (Array.isArray(response.colonia)) {
-                                coloniaSelect.append('<option value="">Seleccione una colonia</option>');
                                 response.colonia.forEach(function (colonia) {
                                     coloniaSelect.append(`<option value="${colonia}">${colonia}</option>`);
                                 });
@@ -358,7 +357,7 @@
         // Manejar cambios en los campos del formulario
         function handleFieldChange() {
             clearTimeout(changeTimeout);
-            changeTimeout = setTimeout(updateButtonText, 1000);
+            changeTimeout = setTimeout(updateButtonText, 500);
         }
 
         // Adjuntar listeners para detectar cambios en los inputs y selects
