@@ -40,6 +40,8 @@
                             <option class=" text-xs" value="0" selected>Selecciona una opción</option>
                             <option class=" text-xs" value="BIMESTRAL">BIMESTRAL</option>
                             <option class=" text-xs" value="TRIMESTRAL">TRIMESTRAL</option>
+                            <option class=" text-xs" value="SEMESTRAL">SEMESTRAL</option>
+                            <option class=" text-xs" value="ANUAL">ANUAL</option>
                         </select>
                     </div>
                     <div class="col-md-3">
