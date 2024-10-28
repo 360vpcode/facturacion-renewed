@@ -14,6 +14,9 @@ VALUES (68, N'EMPRESA PRUEBA, S.A. DE C.V.', N'123456789')
 
 GO
 
+SET IDENTITY_INSERT [dbo].[clientes_hash_crypt] OFF
+GO
+
 SET IDENTITY_INSERT dbo.cat_regimen_fiscal ON;
 insert into dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion)
 values  (601, N'601', N'General de Ley Personas Morales'),
@@ -35,11 +38,9 @@ values  (601, N'601', N'General de Ley Personas Morales'),
         (624, N'624', N'Coordinados'),
         (625, N'625', N'Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas'),
         (626, N'626', N'Régimen Simplificado de Confianza');
-SET IDENTITY_INSERT dbo.cat_regimen_fiscal OFF;
 GO
 
-SET IDENTITY_INSERT [dbo].[clientes_hash_crypt] OFF
-GO
+SET IDENTITY_INSERT dbo.cat_regimen_fiscal OFF;
 
 SET IDENTITY_INSERT [dbo].[facturacion] ON;
 GO

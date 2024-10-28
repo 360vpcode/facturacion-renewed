@@ -1,5 +1,4 @@
 -- DropTables.sql
-IF OBJECT_ID('dbo.cp', 'U') IS NOT NULL DROP TABLE dbo.cp;
 IF OBJECT_ID('dbo.regimen_fiscal', 'U') IS NOT NULL DROP TABLE dbo.cat_regimen_fiscal;
 IF OBJECT_ID('dbo.facturacion_test', 'U') IS NOT NULL DROP TABLE dbo.facturacion_test;
 IF OBJECT_ID('dbo.clientes_hash_crypt', 'U') IS NOT NULL DROP TABLE dbo.clientes_hash_crypt;
