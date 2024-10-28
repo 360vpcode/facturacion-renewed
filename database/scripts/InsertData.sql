@@ -3,27 +3,7 @@ SET IDENTITY_INSERT [dbo].[facturacion] OFF
 SET IDENTITY_INSERT [dbo].[usuarios] OFF
 GO
 
-insert into dbo.cat_regimen_fiscal (c_RegimenFiscal, Descripcion)
-values (N'601', N'General de Ley Personas Morales'),
-       (N'603', N'Personas Morales con Fines no Lucrativos'),
-       (N'605', N'Sueldos y Salarios e Ingresos Asimilados a Salarios'),
-       (N'606', N'Arrendamiento'),
-       (N'607', N'Régimen de Enajenación o Adquisición de Bienes'),
-       (N'608', N'Demás ingresos'),
-       (N'610', N'Residentes en el Extranjero sin Establecimiento Permanente en México'),
-       (N'611', N'Ingresos por Dividendos (socios y accionistas)'),
-       (N'612', N'Personas Físicas con Actividades Empresariales y Profesionales'),
-       (N'614', N'Ingresos por intereses'),
-       (N'615', N'Régimen de los ingresos por obtención de premios'),
-       (N'616', N'Sin obligaciones fiscales'),
-       (N'620', N'Sociedades Cooperativas de Producción que optan por diferir sus ingresos'),
-       (N'621', N'Incorporación Fiscal'),
-       (N'622', N'Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras'),
-       (N'623', N'Opcional para Grupos de Sociedades'),
-       (N'624', N'Coordinados'),
-       (N'625', N'Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas'),
-       (N'626', N'Régimen Simplificado de Confianza');
-GO
+
 
 SET IDENTITY_INSERT [dbo].[clientes_hash_crypt] ON
 
@@ -32,6 +12,30 @@ GO
 INSERT [dbo].[clientes_hash_crypt] ([id], [cliente], [cliente_hash])
 VALUES (68, N'EMPRESA PRUEBA, S.A. DE C.V.', N'123456789')
 
+GO
+
+SET IDENTITY_INSERT dbo.cat_regimen_fiscal ON;
+insert into dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion)
+values  (601, N'601', N'General de Ley Personas Morales'),
+        (603, N'603', N'Personas Morales con Fines no Lucrativos'),
+        (605, N'605', N'Sueldos y Salarios e Ingresos Asimilados a Salarios'),
+        (606, N'606', N'Arrendamiento'),
+        (607, N'607', N'Régimen de Enajenación o Adquisición de Bienes'),
+        (608, N'608', N'Demás ingresos'),
+        (610, N'610', N'Residentes en el Extranjero sin Establecimiento Permanente en México'),
+        (611, N'611', N'Ingresos por Dividendos (socios y accionistas)'),
+        (612, N'612', N'Personas Físicas con Actividades Empresariales y Profesionales'),
+        (614, N'614', N'Ingresos por intereses'),
+        (615, N'615', N'Régimen de los ingresos por obtención de premios'),
+        (616, N'616', N'Sin obligaciones fiscales'),
+        (620, N'620', N'Sociedades Cooperativas de Producción que optan por diferir sus ingresos'),
+        (621, N'621', N'Incorporación Fiscal'),
+        (622, N'622', N'Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras'),
+        (623, N'623', N'Opcional para Grupos de Sociedades'),
+        (624, N'624', N'Coordinados'),
+        (625, N'625', N'Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas'),
+        (626, N'626', N'Régimen Simplificado de Confianza');
+SET IDENTITY_INSERT dbo.cat_regimen_fiscal OFF;
 GO
 
 SET IDENTITY_INSERT [dbo].[clientes_hash_crypt] OFF
@@ -368,31 +372,3 @@ VALUES (N'Quis impedit nulla', 2, N'2015-04-24', N'Quos exercitation ad', N'Anua
         N'2024-09-05 17:00:00.0000000');
 
 GO
-
-
-
-SET IDENTITY_INSERT dbo.cat_regimen_fiscal ON;
-insert into dbo.cat_regimen_fiscal (id, c_RegimenFiscal, Descripcion)
-values  (601, N'601', N'General de Ley Personas Morales'),
-        (603, N'603', N'Personas Morales con Fines no Lucrativos'),
-        (605, N'605', N'Sueldos y Salarios e Ingresos Asimilados a Salarios'),
-        (606, N'606', N'Arrendamiento'),
-        (607, N'607', N'Régimen de Enajenación o Adquisición de Bienes'),
-        (608, N'608', N'Demás ingresos'),
-        (610, N'610', N'Residentes en el Extranjero sin Establecimiento Permanente en México'),
-        (611, N'611', N'Ingresos por Dividendos (socios y accionistas)'),
-        (612, N'612', N'Personas Físicas con Actividades Empresariales y Profesionales'),
-        (614, N'614', N'Ingresos por intereses'),
-        (615, N'615', N'Régimen de los ingresos por obtención de premios'),
-        (616, N'616', N'Sin obligaciones fiscales'),
-        (620, N'620', N'Sociedades Cooperativas de Producción que optan por diferir sus ingresos'),
-        (621, N'621', N'Incorporación Fiscal'),
-        (622, N'622', N'Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras'),
-        (623, N'623', N'Opcional para Grupos de Sociedades'),
-        (624, N'624', N'Coordinados'),
-        (625, N'625', N'Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas'),
-        (626, N'626', N'Régimen Simplificado de Confianza');
-SET IDENTITY_INSERT dbo.cat_regimen_fiscal OFF;
-GO
-
-
